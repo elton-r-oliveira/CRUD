@@ -83,7 +83,7 @@ export default function Home() {
   // DELETE - remover um usuário
   // ============================================================
   const deletarUsuario = async (id: number) => {
-    if (!confirm('Tem certeza que deseja deletar este usuário?')) return; // pergunta antes de deletar; se cancelar, para aqui
+    if (!confirm('Tem certeza que deseja deletar este usuário? - DELETE')) return; // pergunta antes de deletar; se cancelar, para aqui
     try {
       definirCarregando(true);
       await fetch(`${URL_API}/usuarios/${id}`, { method: 'DELETE' }); // manda o Id na URL pro backend saber qual deletar
@@ -146,7 +146,7 @@ export default function Home() {
         {/* ==================== POST / PUT - form de criação/edição ==================== */}
         <Paper elevation={0} sx={{ p: 3, mb: 3 }}> {/* cartão que envolve o formulário */}
           <Typography variant="h6" sx={{ mb: 2 }}>
-            {idEmEdicao ? 'Editar Usuário (PUT)' : 'Novo Usuário (POST)'} {/* muda o título conforme o modo */}
+            {idEmEdicao ? 'Editar Usuário (PUT - UPDATE)' : 'Novo Usuário (POST - CREATE)'} {/* muda o título conforme o modo */}
           </Typography>
 
           <Box component="form" onSubmit={aoEnviarFormulario} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}> {/* ao submeter, chama aoEnviarFormulario */}
@@ -178,7 +178,7 @@ export default function Home() {
 
         {/* ==================== GET - lista de usuários ==================== */}
         <Paper elevation={0} sx={{ p: 3 }}> {/* cartão que envolve a tabela */}
-          <Typography variant="h6" sx={{ mb: 2 }}>Lista de Usuários (GET)</Typography>
+          <Typography variant="h6" sx={{ mb: 2 }}>Lista de Usuários (GET - READ)</Typography>
 
           {carregando && <Typography color="text.secondary">Carregando...</Typography>} {/* enquanto busca os dados */}
 
