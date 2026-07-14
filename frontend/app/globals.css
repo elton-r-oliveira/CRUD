@@ -1,0 +1,26 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg:               #1e1e1e;
+  --surface:          #2a2a2a;
+  --primary:          #3b82f6;
+  --primary-dark:     #2563eb;
+  --error:            #dc2626;
+  --error-dark:       #991b1b;
+
+  --primary-border:   #3b82f6;
+  --primary-active:   #3b82f6;
+  --primary-divider:  #444444;
+  --primary-dim:      #555555;
+
+  --avatar-1: #3b82f6;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+}
